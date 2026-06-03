@@ -2,19 +2,13 @@
 
 ## 📄 Abstract
 
-Text-based person retrieval (TPR) is crucial for video surveillance and public safety, yet existing methods suffer from **closed‑vocabulary assumptions**, **identity‑centric metrics**, and **underutilization of multimodal large language models (MLLMs)**. In this work, we focus on the challenging **Open‑Vocabulary Fine‑Grained TPR (OV‑FG‑TPR)** setting, where queries contain novel terms (brand names, subculture slang, subjective descriptions) never seen during training.
+Text-based person retrieval (TPR) is essential for video surveillance, but existing methods rely on closed vocabularies and identity-centric evaluation, limiting their real-world applicability.
 
-We propose **EmbedTPR**, an **information fusion framework** that integrates three complementary sources:  
-1. Semantic parsing from a **frozen MLLM** (zero‑shot understanding of open‑vocabulary concepts).  
-2. Visual embeddings from a **trainable cross‑modal encoder**.  
-3. Explicit **attribute matching** scores for fine‑grained alignment.  
+We address the Open‑Vocabulary Fine‑Grained TPR (OV‑FG‑TPR) setting, where queries may contain unseen terms such as brand names, subculture slang, or subjective descriptions. We propose EmbedTPR, an information fusion framework that combines three complementary sources: semantic parsing from a frozen multimodal large language model (MLLM), visual embeddings from a pre‑trained cross‑modal encoder, and explicit attribute matching.
 
-To properly evaluate this setting, we introduce a **three‑level evaluation protocol**:  
-- Level 1: Conventional closed‑set benchmarks.  
-- Level 2: **FineGrained‑1282**, a newly constructed test set with 1,282 images across 23 fine‑grained categories (Actions, Logos, Styles).  
-- Level 3: Human expert assessment (Mean Opinion Score).  
+To enable systematic evaluation, we introduce a three‑level protocol: conventional closed‑set benchmarks, a new fine‑grained test set (FineGrained‑1282) with 1,282 images across 23 categories (actions, logos, styles), and human expert assessment.
 
-Experiments show that EmbedTPR dramatically outperforms strong CLIP‑based baselines on open‑vocabulary fine‑grained queries (**e.g., 92.5% vs. 47.83% FG‑Hit@5**), while maintaining competitive closed‑set performance.
+Experiments show that EmbedTPR achieves competitive closed‑set performance (e.g., 62.8% Rank‑1 on CUHK‑PEDES) while substantially outperforming zero‑shot baselines like CLIP on open‑vocabulary fine‑grained queries—improving mAP from 6.2% to 46.2% and Mean Opinion Score from 2.1 to 4.2 out of 5.
 
 ## 📢 Open Source Release Plan
 
